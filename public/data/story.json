@@ -1,0 +1,61 @@
+{
+    "story": {
+      "title": "Re:boot",
+      "summary": "Tu explores un ordinateur après une perte de mémoire."
+    },
+    "chapters": [
+      { "id": 1, "title": "Bureau", "content": "Tu te réveilles dans une chambre d’hôpital. La lumière est trop blanche, trop calme. On te parle d’un accident de voiture. Tu es vivant, mais des souvenirs manquent à l’appel. Un vieil ordinateur, cabossé, a été retrouvé sur les lieux. Apparemment, il t’appartenait. Tu l’ouvres. Et tout commence ici.", "required_flag": null },
+      { "id": 2, "title": "Dossier", "content": "1 fichier", "required_flag": null },
+      { "id": 3, "title": "rappel.txt", "content": "Ce fichier est là pour te rappeler que tu t'étais dit de ne pas chercher plus loin. Si tu ne te souviens pas pourquoi... c’est que c’est mieux ainsi.", "required_flag": null },
+      { "id": 4, "title": "Fichier supprimé", "content": "Tu as supprimé le fichier. Il ne reviendra pas.", "required_flag": null },
+      { "id": 5, "title": "Fichier gardé", "content": "Tu as choisi de garder ce fichier. Peut-être pour une bonne raison.", "required_flag": null },
+      { "id": 6, "title": "Mail à envoyer", "content": "Un brouillon. Adressé à une Emma. Avec comme contenu : **Re:boot** Rien d’autre. Tu ne sais pas qui est Emma. Ni ce que ce mot signifie. \n\nQue fais-tu ?", "required_flag": null },
+      { "id": 7, "title": "Réponse d'Emma", "content": "Tu as reçu une réponse automatique d'Emma", "required_flag": "has_sent_mail_to_emma" },
+      { "id": 8, "title": "Silence", "content": "Tu n’as rien envoyé. Rien ne changera.", "required_flag": null },
+      { "id": 9, "title": "sauvegarde.exe", "content": "Une application de restauration. Tu peux lancer une récupération des données, complète ou partielle.", "required_flag": null },
+      { "id": 10, "title": "Restauration partielle", "content": "Tu as restauré partiellement, un fichier est apparu.", "required_flag": null },
+      { "id": 11, "title": "Restauration totale", "content": "Tu as fait une restauration totale. Certains fichiers sont réapparus.", "required_flag": null },
+      { "id": 12, "title": "mot_de_passe.txt", "content": "Il dort sur ton clavier, miaule à la moindre alerte… Tu lui parlais plus qu’à personne. Son nom t’ouvre encore des portes.", "required_flag": "has_used_restore_partial" },
+      { "id": 13, "title": "Mot de passe accepté", "content": "Mot de passe accepté. Tu peux maintenant lire le fichier.", "required_flag": "password_success" },
+      { "id": 14, "title": "Mot de passe incorrect", "content": "Le mot de passe était incorrect. Le fichier s’est effacé à jamais.", "required_flag": "password_error" },
+      { "id": 15, "title": "Réponse d'Emma", "content": "Je t'ai laissé des réponses dans le fichier perso.txt. Je te fais confiance pour deviner le mot de passe 🐱", "required_flag": null },
+      { "id": 16, "title": "Poubelle", "content": "Tu découvres des fichiers et des photos effacés.", "required_flag": null },
+      { "id": 17, "title": "Images effacées", "content": "3 images sont visibles.", "required_flag": null },
+      { "id": 18, "title": "perso.txt", "content": "Ce fichier est protégé par un mot de passe. Tu dois le trouver. Attention, tu n'as qu'une chance.", "required_flag": null },
+      { "id": 19, "title": "Fichiers effacés", "content": "3 fichiers sont visibles.", "required_flag": null },
+      { "id": 20, "title": "Contacts", "content": "6 contacts", "required_flag": null },
+      { "id": 21, "title": "Clé USB", "content": "Regarde dans ta veste. Celle du jour de l’accident. Une clé USB. Insère-la.", "required_flag": "password_success" },
+      { "id": 22, "title": "Jeu lancé", "content": "Un jeu s'est lancé.", "required_flag": "has_inserted_usb" },
+      { "id": 23, "title": "Jeu.txt", "content": " ", "required_flag": "has_inserted_usb" },
+      { "id": 24, "title": "test.txt", "content": "Un fichier texte.", "required_flag": null },
+      { "id": 25, "title": "test2.txt", "content": "Un fichier texte.", "required_flag": null },
+      { "id": 26, "title": "test3.txt", "content": "Un fichier texte.", "required_flag": null },
+      { "id": 27, "title": "Jeu réussi", "content": "Tu as réussi le jeu. Un fichier est apparu.", "required_flag": null },
+      { "id": 28, "title": "Jeu échoué", "content": "Tu as échoué le jeu. Tu dois recommencer.", "required_flag": null },
+      { "id": 29, "title": "Fichier final", "content": "Journal personnel\n\nSi tu lis ceci, c'est que tu as oublié. Encore. L'accident n'était pas un accident. Tu as effacé tes propres souvenirs pour te protéger. Pour nous protéger.\n\nTu es Emma. Je suis toi. Et maintenant, tu dois décider: te souvenir de tout, ou recommencer à zéro.", "required_flag": "game_completed" },
+      { "id": 30, "title": "Fin avec mémoire", "content": "Partie terminée", "required_flag": "game_win" },
+      { "id": 31, "title": "Fin sans mémoire", "content": "Partie terminée", "required_flag": "game_win" }
+    ],
+    "choices": [
+      { "chapter_id": 2, "text": "Ouvrir rappel.txt", "next_chapter_id": 3, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 3, "text": "Supprimer le fichier", "next_chapter_id": 4, "set_flag": "has_deleted_rappel", "condition_flag": null },
+      { "chapter_id": 3, "text": "Garder le fichier", "next_chapter_id": 5, "set_flag": "has_opened_rappel", "condition_flag": null },
+      { "chapter_id": 6, "text": "Envoyer le mail", "next_chapter_id": 7, "set_flag": "has_sent_mail_to_emma", "condition_flag": null },
+      { "chapter_id": 6, "text": "Ne rien faire", "next_chapter_id": 8, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 7, "text": "Lire la réponse", "next_chapter_id": 15, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 9, "text": "Restaurer partiellement", "next_chapter_id": 10, "set_flag": "has_used_restore_partial", "condition_flag": null },
+      { "chapter_id": 9, "text": "Restaurer totalement", "next_chapter_id": 11, "set_flag": "has_used_restore_all", "condition_flag": null },
+      { "chapter_id": 13, "text": "Lire le fichier", "next_chapter_id": 21, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 21, "text": "Insérer la clé USB", "next_chapter_id": 22, "set_flag": "has_inserted_usb", "condition_flag": null },
+      { "chapter_id": 16, "text": "Regarder les photos effacées", "next_chapter_id": 17, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 16, "text": "Regarder les fichiers effacés", "next_chapter_id": 19, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 19, "text": "test.txt", "next_chapter_id": 24, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 19, "text": "test2.txt", "next_chapter_id": 25, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 19, "text": "test3.txt", "next_chapter_id": 26, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 28, "text": "Recommencer", "next_chapter_id": 23, "set_flag": null, "condition_flag": null },
+      { "chapter_id": 29, "text": "Se souvenir de tout", "next_chapter_id": 30, "set_flag": "game_win", "condition_flag": null },
+      { "chapter_id": 29, "text": "Tout oublier", "next_chapter_id": 31, "set_flag": "game_win", "condition_flag": null }
+
+    ]
+  }
+  
