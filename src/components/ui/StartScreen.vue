@@ -1,10 +1,6 @@
 <!-- filepath: c:\Users\anna\DevProdMed\reboot-test-2\reboot-test\resources\js\components\ui\StartScreen.vue -->
 <template>
   <div class="start-screen">
-     <a href="/login" class="auth-button">
-      <span class="auth-icon">👤</span>
-      Se connecter
-    </a>
     <div class="content-container">
       <div class="header">
         <h1>RE:BOOT</h1>
